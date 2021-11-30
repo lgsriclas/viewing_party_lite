@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
   def show
-  end 
+  end
 
   def new
   end
 
   def create
     user = User.create(user_params)
+    if user.save
+      flash[:success] = "Welcome #{user.name}"
     redirect_to "/users/#{user.id}"
+    else
+      flash[:error] = "Please enter a vaild name/email"
+    end
   end
 
   private
