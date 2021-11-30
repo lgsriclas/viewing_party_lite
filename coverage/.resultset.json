@@ -7,7 +7,7 @@
           null
         ]
       },
-      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/models/invite.rb": {
+      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -24,22 +24,17 @@
           null
         ]
       },
-      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/models/party.rb": {
+      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
         "lines": [
           1,
           1,
-          1,
+          5,
           null,
-          1,
           null
         ]
       },
-      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          null,
           1,
           null
         ]
@@ -54,15 +49,31 @@
         "branches": {
         }
       },
-      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/models/party.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          null,
           0,
           0
         ],
         "branches": {
         }
       },
-      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/models/invite.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/jacobyarborough/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -91,6 +102,6 @@
         }
       }
     },
-    "timestamp": 1638305100
+    "timestamp": 1638311533
   }
 }

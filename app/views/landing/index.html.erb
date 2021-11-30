@@ -1,0 +1,12 @@
+<h1>Viewing Party Lite</h1>
+
+<div id="users">
+Existing Users:<br>
+<% @users.each do |user| %>
+  <%= user.email %><br>
+<% end %><br>
+</div>
+
+<div id="new-user-button">
+<%= button_to("Create a New User", register_path) %>
+</div>
