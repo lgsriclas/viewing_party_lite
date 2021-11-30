@@ -20,5 +20,7 @@ RSpec.describe 'new user registration page' do
     fill_in :name, with: name
     fill_in :email, with: email
     click_on "Register"
+
+    expect(current_path).to eq('users/:id')
   end
 end
