@@ -10,16 +10,14 @@ RSpec.describe 'new user registration page' do
     expect(page).to have_content("Email:")
   end
 
-  xit 'can register a new user'
+  it 'can register a new user' do
     name = "Charlie Brown"
     email = "charliebrown@snoopy.com"
 
-    visit '/'
-
-    click_on ""
-    expect(current_path).to eq('/register')
+    visit '/register'
 
     fill_in :name, with: name
     fill_in :email, with: email
     click_on :register
+  end
 end
