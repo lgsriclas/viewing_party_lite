@@ -5,9 +5,10 @@ RSpec.describe 'new user registration page' do
     visit '/register'
 
     expect(current_path).to eq('/register')
-    expect(page).to have_content("Register a New User")
-    expect(page).to have_content("Name:")
-    expect(page).to have_content("Email:")
+    expect(page).to have_content("Register New User")
+    expect(page).to have_content("Name")
+    expect(page).to have_content("Email")
+    expect(page).to have_button("Register")
   end
 
   it 'can register a new user' do
@@ -18,6 +19,6 @@ RSpec.describe 'new user registration page' do
 
     fill_in :name, with: name
     fill_in :email, with: email
-    click_on :register
+    click_on "Register"
   end
 end
