@@ -1,26 +1,26 @@
-###Neccesary checkmarks:
+### Neccesary checkmarks:
 
 * [ ] All Tests are Passing
 * [ ] The code will run locally
 
-###Type of change
+### Type of change
 
 * [ ] New feature
 * [ ] Bug Fix
 
-###Check the correct boxes
+### Check the correct boxes
 
 * [ ] This broke nothing
 * [ ] This broke some stuff
 * [ ] This broke everything
 
-###Testing Changes
+### Testing Changes
 
 * [ ] No Tests have been changed
 * [ ] Some Tests have been changed
 * [ ] All of the Tests have been changed(Please describe what in the world happened)
 
-###Checklist:
+### Checklist:
 
 * [ ] My code has no unused/commented out code
 * [ ] I have reviewed my code
