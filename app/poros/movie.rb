@@ -4,18 +4,14 @@ class Movie
               :duration,
               :vote_average,
               :genres,
-              :summary,
-              :cast,
-              :reviews
-
+              :summary
+            
   def initialize(data)
     @movie_id = data[:movie_id]
-    @movie_title = data[:belongs_to_collection][:name]
-    @duration = data[:]
-    @vote_average = data[:]
+    @movie_title = data[:title]
+    @duration = data[:runtime]
+    @vote_average = data[:vote_average]
     @genres = data[:genres]
     @summary = data[:overview]
-    @cast = data[:]
-    @reviews = data[:]
   end
 end
