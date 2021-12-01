@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   validates_presence_of :name, :email
   validates :email, uniqueness: true 
+
+  def invitations
+    invites.joins(:party).select('invites.user_id as invitee_id, parties.*')
+  end 
 end
