@@ -14,6 +14,7 @@ RSpec.describe 'user dashboard page' do
     end 
 
     it "contains the user's name in the title" do
+      visit "/users/100"
       save_and_open_page
       expect(page).to have_content("#{user_1.name}'s Dashboard")
     end 
