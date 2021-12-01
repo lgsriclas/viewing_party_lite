@@ -12,15 +12,23 @@ RSpec.describe 'new user registration page' do
   end
 
   it 'can register a new user' do
-    name = "Charlie Brown"
-    email = "charliebrown@snoopy.com"
-
     visit '/register'
 
-    fill_in :name, with: name
-    fill_in :email, with: email
+    fill_in :name, with: "Snoopy"
+    fill_in :email, with: "snoopy@peanuts.com"
     click_on "Register"
 
-    expect(current_path).to eq('users/:id')
+    expect(page).to have_content("Snoopy")
+    expect(page).to have_link("Home")
+    expect(page).to have_content("Welcome Snoopy")
+  end
+
+  it 'register new user sad path' do
+    visit '/register'
+
+    fill_in :name, with: ""
+    fill_in :email, with: "sally@peanuts.com"
+
+    expect(current_path).to eq('/register')
   end
 end
