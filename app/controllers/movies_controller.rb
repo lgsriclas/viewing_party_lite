@@ -1,8 +1,8 @@
 class MoviesController < ApplicationController
   def discover
-  end 
+  end
 
-  def index 
-    binding.pry
-  end 
-end 
+  def index
+    @movies = MovieFacade.get_top_rated
+  end
+end

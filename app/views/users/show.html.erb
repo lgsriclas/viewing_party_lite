@@ -1,6 +1,6 @@
 <h2><%= @user.name %>'s Dashboard</h2>
 
-<%= button_to("Discover Movies", "/users/#{@user.id}/discover") %>
+<%= button_to("Discover Movies", "/users/#{@user.id}/discover", method: :get, local: true) %>
 
 <% @user.parties.each do |party| %>
   <%= party.movie_title %><br>
