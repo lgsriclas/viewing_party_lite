@@ -11,9 +11,10 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     if user.save
       flash[:success] = "Welcome #{user.name}"
-    redirect_to "/users/#{user.id}"
+      redirect_to "/users/#{user.id}"
     else
       flash[:error] = "Please enter a vaild name/email"
+      redirect_to "/register"
     end
   end
 
