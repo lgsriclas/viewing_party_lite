@@ -2,8 +2,12 @@
 
 <div id="users">
 Existing Users:<br>
-<% @users.each do |user| %>
-  <%= user.email %><br>
+<% if @users.count > 0 %>
+  <% @users.each do |user| %>
+    <%= user.email %><br>
+  <% end %><br>
+<% else %>
+  There are no existing users. Create a new user to get started!<br>
 <% end %><br>
 </div>
 

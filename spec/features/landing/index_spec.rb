@@ -1,20 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe 'landing page' do 
-  describe 'functionality' do
+  describe 'happy path functionality' do
     let!(:users) { create_list(:user, 2) }
 
     before(:each) do
       visit root_path
     end 
 
-    it 'shows all existing users' do 
-      save_and_open_page
-      within "#users" do
-        expect(page).to have_content("Existing Users:")
-        expect(page).to have_content(users[0][:email])
-        expect(page).to have_content(users[1][:email])
-      end
+    context 'when there are existing users' do 
+      it 'shows all existing users' do 
+        within "#users" do
+          expect(page).to have_content("Existing Users:")
+          expect(page).to have_content(users[0][:email])
+          expect(page).to have_content(users[1][:email])
+        end
+      end 
     end 
 
     it 'has a button to create a new user' do 
@@ -31,6 +32,18 @@ RSpec.describe 'landing page' do
 
     it 'shows the application name' do 
       expect(page).to have_content("Viewing Party Lite")
+    end 
+  end 
+
+  describe 'sad path functionaily' do 
+    context 'when there are no existing users' do 
+      it 'shows all existing users' do 
+        visit root_path
+        within "#users" do 
+          expect(page).to have_content("Existing Users:")
+          expect(page).to have_content("There are no existing users. Create a new user to get started!")
+        end 
+      end 
     end 
   end 
 end 
