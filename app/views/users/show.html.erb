@@ -2,4 +2,12 @@
 
 <%= button_to("Discover Movies", "/users/#{@user.id}/discover") %>
 
-<%= %>
+<% @user.parties.each do |party| %>
+  <%= party.movie_title %><br>
+  Host<br>
+<% end %><br>
+
+<% @user.invitations.each do |invite| %>
+  <%= invite.movie_title %><br>
+  Invited<br>
+<% end %><br>
