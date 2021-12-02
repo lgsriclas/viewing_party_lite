@@ -3,6 +3,10 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = MovieFacade.get_top_rated
+    if params["q"] == "top_rated"
+      @movies = MovieFacade.get_top_rated
+    else
+      @movies = MovieFacade.find_movies(params["movie_title"])
+    end
   end
 end
