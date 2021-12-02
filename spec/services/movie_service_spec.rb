@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'TMDB Movie Service' do 
-  # test structure that comes back from api call 
-  #   1. test presence of keys
-  #   2. test data type of values
   describe 'happy path' do 
     it 'can get top rated movies' do
       response = MovieService.top_rated_movies
