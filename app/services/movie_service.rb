@@ -11,7 +11,7 @@ class MovieService
       response = conn("https://api.themoviedb.org/3/search/movie").get do |x|
         x.params['api_key'] = ENV['movie_api_key']
         x.params['query'] = find
-      end 
+      end
       parse_data(response)
     end
 
