@@ -1,8 +1,12 @@
 class MoviesController < ApplicationController
   def discover
-  end 
+  end
 
-  def index 
-    binding.pry
-  end 
-end 
+  def index
+    if params["q"] == "top_rated"
+      @movies = MovieFacade.get_top_rated
+    else
+      @movies = MovieFacade.find_movies(params["movie_title"])
+    end
+  end
+end
