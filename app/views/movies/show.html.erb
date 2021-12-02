@@ -1,0 +1,28 @@
+<h2><%= @movie.movie_title %></h2>
+
+<%= button_to("Discover Movies", "/users/#{@user_id}/discover", method: :get, local: true) %><br>
+
+<%= @movie.vote_average %><br>
+<%= @movie.duration %><br>
+<br>
+Genre(s):
+<% @movie.genres.each do |genre| %>
+  <%= genre[:name] %>
+<% end %><br>
+<br>
+<%= @movie.summary %><br>
+<br>
+cast:<br>
+<% @movie.cast.each do |member| %><br>
+  <%= member[:name] %> :
+  <%= member[:character] %><br>
+<% end %><br>
+<br>
+Reviews:<br>
+<br>
+<% @movie.reviews.each do |review| %>
+  <%= review[:author] %>:<br>
+  <%= review[:content] %><br>
+  <br>
+  <br>
+<% end %><br>

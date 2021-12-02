@@ -15,6 +15,27 @@ class MovieService
       parse_data(response)
     end
 
+    def get_movie(movie_id)
+      response = conn("https://api.themoviedb.org/3/movie/#{movie_id}").get do |x|
+        x.params['api_key'] = ENV['movie_api_key']
+      end
+      parse_data(response)
+    end
+
+    def get_cast(movie_id)
+      response = conn("https://api.themoviedb.org/3/movie/#{movie_id}/credits").get do |x|
+        x.params['api_key'] = ENV['movie_api_key']
+      end
+      parse_data(response)
+    end
+
+    def get_reviews(movie_id)
+      response = conn("https://api.themoviedb.org/3/movie/#{movie_id}/reviews").get do |x|
+        x.params['api_key'] = ENV['movie_api_key']
+      end
+      parse_data(response)
+    end
+
     private
     def conn(url)
       Faraday.new(url)
