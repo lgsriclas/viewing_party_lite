@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/users/:id/movies', to: 'movies#index', as: "user_movies"
   get '/users/:id/movies/:movie_id', to: 'movies#show'
 
-  # Viewing Parties Controller
-  get '/users/:id/movies/:id/viewing_party/new', to: 'viewing_parties#new'
-  post '/users/:id/movies/:id/viewing_party/new', to: 'viewing_parties#create'
+  # Parties Controller
+  get '/users/:id/movies/:movie_id/party/new', to: 'parties#new'
+  post '/users/:id/movies/:movie_id/party/new', to: 'parties#create'
 end

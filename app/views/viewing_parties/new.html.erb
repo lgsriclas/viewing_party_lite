@@ -1,9 +1,0 @@
-<h1>Create a Movie Party for <%= @movie[:title] %></h1>
-
-<h3>Viewing Party Details</h3>
-<%= form_with url:"/users/#{@user_id}/movies/#{@movie_id}/viewing_party/new", method: :post, local: true do |f| %>
-  <%= f.hidden_field :movie_id, value: 'movie_id' %>
-  <%= f.hidden_field :user_id, value: 'user_id' %>
-  <%= f.hidden_field :title, value: 'movie_title' %>
-  <%= f.label :title %>
-<% end %>

@@ -79,14 +79,15 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('<movie_api_key>') { ENV['movie_api_key'] }
   config.default_cassette_options = { re_record_interval: 7.days }
+  config.allow_http_connections_when_no_cassette = true
 end
 
-def data_1 
+def data_1
   # put data from api call here
-end 
+end
 def data_2
   # put data from api call here
-end 
+end
 def data_3
   # put data from api call here
-end 
+end

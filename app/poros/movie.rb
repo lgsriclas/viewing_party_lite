@@ -10,7 +10,7 @@ class Movie
               :image
 
   def initialize(data, data_2, data_3)
-    @movie_id = data[:movie_id]
+    @movie_id = data[:id]
     @movie_title = data[:title]
     @duration = data[:runtime]
     @vote_average = data[:vote_average]
