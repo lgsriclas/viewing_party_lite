@@ -1,0 +1,37 @@
+<h2><%= @movie.movie_title %></h2>
+
+<%= button_to("Discover Movies", "/users/#{@user_id}/discover", method: :get, local: true) %><br>
+
+<%= @movie.vote_average %><br>
+<%= @movie.duration %><br>
+<br>
+Genre(s):
+<% @movie.genres.each do |genre| %>
+  <%= genre[:name] %>
+<% end %><br>
+<br>
+<%= @movie.summary %><br>
+<br>
+cast:<br>
+<% @movie.cast.each do |member| %><br>
+  <%= member[:name] %> :
+  <%= member[:character] %><br>
+<% end %><br>
+<br>
+Reviews:<br>
+<br>
+<% @movie.reviews.each do |review| %>
+  <%= review[:author] %>:<br>
+  <%= review[:content] %><br>
+  <br>
+  <br>
+<% end %><br>
+
+<%= form_with url: "/users/#{@user_id}/movies/#{@movie.movie_id}/party/new", method: :get, local: true do |f| %>
+  <%= f.hidden_field :movie_id, value: @movie.movie_id %>
+  <%= f.hidden_field :title, value: @movie.movie_title %>
+  <%= f.hidden_field :duration, value: @movie.duration %>
+  <%= f.hidden_field :image, value: @movie.image %>
+  <%= f.submit "Create a Viewing Party"%>
+<% end %>
+
