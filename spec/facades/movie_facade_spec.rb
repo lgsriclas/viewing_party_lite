@@ -4,7 +4,7 @@ RSpec.describe 'Movie Facade' do
   it '.get_top_rated' do
     top_rated = MovieFacade.get_top_rated
 
-    expect(top_rated).to be_an(array)
+    expect(top_rated).to be_a Hash
   end
 
   it '.movie_info', :vcr do

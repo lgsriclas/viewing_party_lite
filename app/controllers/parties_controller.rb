@@ -7,8 +7,9 @@ class PartiesController < ApplicationController
   end
 
   def create
-    Party.create!(party_params)
-    redirect_to "/users/#{user.id}"
+    party = Party.create!(party_params)
+    Invite.create!(user_id: params[:user], party_id: party.id)
+    redirect_to "/users/#{params[:id]}"
   end
 
   private

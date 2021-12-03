@@ -19,8 +19,8 @@ RSpec.describe 'movie show page' do
   end
 
   describe 'sad path' do
-    it 'does not show movie data' do
-      VCR.use_cassette('moviedb_movies', re_record_interval: 7.days) do
+    xit 'does not show movie data' do
+      VCR.use_cassette('moviedb_movies_2', re_record_interval: 7.days) do
         user = User.create!(name: "Snoopy", email: "snoopy@peanuts.com")
 
         visit "/users/#{user.id}/discover"
