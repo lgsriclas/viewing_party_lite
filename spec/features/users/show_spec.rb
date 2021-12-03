@@ -25,7 +25,6 @@ RSpec.describe 'user dashboard page' do
       expect(page).to have_content("Viewing Parties:")
 
       within "#party-#{party_1.id}" do 
-      save_and_open_page
         expect(page).to have_content(party_1.movie_title)
         expect(page).to have_content(party_1.start_date.strftime("%B %e, %Y"))
         expect(page).to have_content(party_1.start_time.strftime("%I:%M %p"))

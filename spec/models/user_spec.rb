@@ -30,7 +30,9 @@ RSpec.describe User, type: :model do
           "movie_title"=>party_3.movie_title,
           "start_time"=>party_3.start_time,
           "start_date"=>party_3.start_date,
-          "duration"=>party_3.duration}
+          "duration"=>party_3.duration,
+          "image"=>party_3.image
+        }
 
         expect(user_1.invitations[0].attributes).to eq(expected)
       end 
