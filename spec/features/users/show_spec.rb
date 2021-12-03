@@ -23,7 +23,7 @@ RSpec.describe 'user dashboard page' do
     end
 
     it 'has a section that lists viewing parties' do
-      expect(page).to have_content("Viewing Parties")
+      expect(page).to have_content("Viewing Parties:")
 
       within "#"
     end
