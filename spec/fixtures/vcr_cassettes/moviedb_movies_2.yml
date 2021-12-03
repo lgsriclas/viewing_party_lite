@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<movie_api_key>&query=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unknown
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 03 Dec 2021 02:47:56 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 ae9634deb2e9d6f8d396fc6f1e0586fa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - hgcuEoRdXhmamfJIfzB0VsfaukDspLjogW7IRvmthI0OTznuo_5Y9Q==
+    body:
+      encoding: UTF-8
+      string: '{"errors":["query must be provided"]}'
+  recorded_at: Fri, 03 Dec 2021 02:47:57 GMT
+recorded_with: VCR 6.0.0

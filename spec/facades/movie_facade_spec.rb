@@ -17,5 +17,5 @@ RSpec.describe 'Movie Facade' do
     movie = MovieFacade.movie_info(120)
 
     expect(movie).to be_a(Movie)
-  end 
-end 
+  end
+end

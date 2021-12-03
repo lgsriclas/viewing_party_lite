@@ -1,7 +1,5 @@
 require 'rails_helper'
-# testing guide:
-# 1.methods that are in poro
-# 2. attributess that are in poro
+
 RSpec.describe Movie do 
   let(:movie) { Movie.new(data, data_2, data_3) }
   it 'has attributes' do  

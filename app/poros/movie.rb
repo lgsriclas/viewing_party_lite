@@ -28,15 +28,15 @@ class Movie
         break if count >= 10
         new_array.push( {name: member[:name], character: member[:character]} )
         count += 1
-      end 
+      end
     new_array
-  end 
+  end
 
   def review(data)
     new_array = []
     data[:results].each do |review|
       new_array.push( {author: review[:author], content: review[:content] } )
-    end 
+    end
     new_array
-  end 
+  end
 end
