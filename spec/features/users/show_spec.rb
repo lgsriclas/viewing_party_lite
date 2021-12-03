@@ -14,7 +14,6 @@ RSpec.describe 'user dashboard page' do
     end
 
     it "contains the user's name in the title" do
-      save_and_open_page
       expect(page).to have_content("#{user_1.name}'s Dashboard")
     end
 
@@ -23,9 +22,29 @@ RSpec.describe 'user dashboard page' do
     end
 
     it 'has a section that lists viewing parties' do
-      expect(page).to have_content("Viewing Parties")
+      expect(page).to have_content("Viewing Parties:")
 
-      within "#"
+      within "#party-#{party_1.id}" do 
+      save_and_open_page
+        expect(page).to have_content(party_1.movie_title)
+        expect(page).to have_content(party_1.start_date.strftime("%B %e, %Y"))
+        expect(page).to have_content(party_1.start_time.strftime("%I:%M %p"))
+        expect(page).to have_content("Host")
+      end 
+
+      within "#party-#{party_2.id}" do 
+        expect(page).to have_content(party_2.movie_title)
+        expect(page).to have_content(party_2.start_date.strftime("%B %e, %Y"))
+        expect(page).to have_content(party_2.start_time.strftime("%I:%M %p"))
+        expect(page).to have_content("Host")
+      end
+      
+      within "#party-#{party_3.id}" do 
+        expect(page).to have_content(party_3.movie_title)
+        expect(page).to have_content(party_3.start_date.strftime("%B %e, %Y"))
+        expect(page).to have_content(party_3.start_time.strftime("%I:%M %p"))
+        expect(page).to have_content("Invited")
+      end 
     end
   end
 end

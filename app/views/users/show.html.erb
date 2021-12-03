@@ -1,13 +1,25 @@
 <h2><%= @user.name %>'s Dashboard</h2>
 
-<%= button_to("Discover Movies", "/users/#{@user.id}/discover", method: :get, local: true) %>
+<%= button_to("Discover Movies", "/users/#{@user.id}/discover", method: :get, local: true) %><br>
 
+<h2>Viewing Parties:</h2>
 <% @user.parties.each do |party| %>
+<div id="party-<%= party.id %>">
+  <%= image_tag "https://image.tmdb.org/t/p/w92/#{party.image}" %><br>
   <%= party.movie_title %><br>
+  <%= party.start_date.strftime("%B %e, %Y") %><br>
+  <%= party.start_time.strftime("%I:%M %p") %><br>
   Host<br>
-<% end %><br>
-
+  <br>
+</div>
+<% end %>
 <% @user.invitations.each do |invite| %>
+<div id="party-<%= invite.id %>">
+  <%= image_tag "https://image.tmdb.org/t/p/w92/#{invite.image}" %><br>
   <%= invite.movie_title %><br>
+  <%= invite.start_date.strftime("%B %e, %Y") %><br>
+  <%= invite.start_time.strftime("%I:%M %p") %><br>
   Invited<br>
+  <br>
+</div>
 <% end %><br>

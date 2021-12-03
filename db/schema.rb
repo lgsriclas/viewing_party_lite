@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_204101) do
     t.datetime "start_time"
     t.datetime "start_date"
     t.integer "duration"
+    t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

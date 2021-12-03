@@ -14,6 +14,6 @@ class PartiesController < ApplicationController
 
   private
   def party_params
-    params.permit(:movie_id, :movie_title, :user_id, :duration, :start_date, :start_time)
+    params.permit(:movie_id, :movie_title, :user_id, :duration, :start_date, :start_time, :image)
   end
 end

@@ -15,6 +15,12 @@ RSpec.describe 'landing page' do
           expect(page).to have_content(users[0][:email])
           expect(page).to have_content(users[1][:email])
         end
+
+        within "#users" do
+          click_link "#{users[0][:email]}"
+
+          expect(current_path).to eq("/users/#{users[0].id}")
+      end
       end 
     end 
 
