@@ -6,6 +6,7 @@ Existing Users:<br>
   <% @users.each do |user| %>
     <%= link_to user.email, "/users/#{user.id}" %><br>
   <% end %><br>
+  <%= link_to "Login", "/login" %><br><br>
 <% else %>
   There are no existing users. Create a new user to get started!<br>
 <% end %><br>

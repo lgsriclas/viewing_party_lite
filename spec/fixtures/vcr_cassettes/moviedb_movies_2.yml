@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 03 Dec 2021 02:47:56 GMT
+      - Wed, 15 Dec 2021 22:14:38 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -38,13 +38,13 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 ae9634deb2e9d6f8d396fc6f1e0586fa.cloudfront.net (CloudFront)
+      - 1.1 59d9797319b555b25abd21e200e6e428.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - EWR53-P1
+      - EWR52-C2
       X-Amz-Cf-Id:
-      - hgcuEoRdXhmamfJIfzB0VsfaukDspLjogW7IRvmthI0OTznuo_5Y9Q==
+      - 5VQ7gCIqcSMFShO836FBtG56-TIhUNoxOmkwHJTq6UVSY4oSpSYEQw==
     body:
       encoding: UTF-8
       string: '{"errors":["query must be provided"]}'
-  recorded_at: Fri, 03 Dec 2021 02:47:57 GMT
+  recorded_at: Wed, 15 Dec 2021 22:14:38 GMT
 recorded_with: VCR 6.0.0
