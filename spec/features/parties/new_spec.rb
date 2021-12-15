@@ -4,7 +4,7 @@ RSpec.describe 'create viewing party' do
   describe 'happy path' do
     it 'allows user to create a viewing party' do
       VCR.use_cassette('moviedb_movies_4', re_record_interval: 7.days) do
-        user = User.create!(name: "Snoopy", email: "snoopy@peanuts.com")
+        user = create(:user)
 
         visit "/users/#{user.id}/movies/2/party/new"
 
