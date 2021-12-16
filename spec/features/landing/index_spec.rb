@@ -2,25 +2,31 @@ require 'rails_helper'
 
 RSpec.describe 'landing page' do
   describe 'happy path functionality' do
-    let!(:users) { create_list(:user, 2) }
-
     before(:each) do
+      @user_1 = create(:user)
+      @user_2 = create(:user)
       visit root_path
     end
 
     context 'when there are existing users' do
       it 'shows all existing users' do
-        within "#users" do
-          expect(page).to have_content("Existing Users:")
-          expect(page).to have_content(users[0][:email])
-          expect(page).to have_content(users[1][:email])
+        visit '/login'
+
+        fill_in :email, with: @user_1.email
+        fill_in :password, with: @user_2.password
+        click_button "Login"
+
+        visit '/'
+        
+        expect(page).to have_content("Existing Users:")
+
+        within "#user-#{@user_1.id}" do
+          expect(page).to have_content(@user_1.email)
         end
 
-        within "#users" do
-          click_link "#{users[0][:email]}"
-
-          expect(current_path).to eq("/users/#{users[0].id}")
-      end
+        within "#user-#{@user_2.id}" do
+          expect(page).to have_content(@user_1.email)
+        end
       end
     end
 

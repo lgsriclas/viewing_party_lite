@@ -2,7 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
-   @user
+    if session[:user_id]
+      @user
+    else
+      flash[:alert] = "Please enter valid credentials"
+      redirect to '/'
+    end
   end
 
   def new
@@ -12,23 +17,8 @@ class UsersController < ApplicationController
     user = User.create!(user_params)
     if user.save
       flash[:alert] = "Welcome #{user.name}!"
-      redirect_to "/users/#{user.id}"
+      redirect_to "/dashboard"
     else
-      redirect_to "/register"
-    end
-  end
-
-  def login_form
-  end
-
-  def login_user
-    user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
-      flash[:alert] = "Welcome Back #{user.name}!"
-      redirect_to "/users/#{user.id}"
-    else
-      flash[:alert] = "Please enter valid credentials."
-      redirect_to "/login"
     end
   end
 
